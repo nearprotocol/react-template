@@ -8,11 +8,9 @@
 <br />
 <br />
 
-# Template for NFTs (Non-Fungible Tokens)
+## Template for NFTs (Non-Fungible Tokens)
 
-## Description
-
-* Template for creating NEAR dapps with a React frontend
+* Template for creating NEAR dapps with a React frontend 🐲
 * We got Webpack! 💥
 * We got Gulp! 💦
 * We got Corgis? 🐶
@@ -51,3 +49,7 @@ npm test
 - `src/index.html` for the front-end HTML
 - `src/main.js` for the JavaScript front-end code and how to integrate contracts
 - `src/test.js` for the JS tests for the contract
+- `src/frontend.jsx` for the first react component
+- `src/frontend.css` for styles
+
+Note: that these files can all be moved around and customized. The point of this template is to get you up to speed as quickly as possible without needing to hastle with all the config.
