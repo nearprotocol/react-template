@@ -1,0 +1,43 @@
+{
+  "name": "tokens",
+  "description": "",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "mkdir -p out/ && gulp",
+    "deploy:contract": "near deploy",
+    "deploy:pages": "gh-pages -d dist",
+    "deploy": "npm run build && npm run deploy:contract && npm run deploy:pages",
+    "prestart": "npm run build && npm run deploy:contract",
+    "start": "python3 -mhttp.server --directory dist",
+    "test": "npm run build && jest test --env=near-shell/test_environment"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "assemblyscript-json": "github:nearprotocol/assemblyscript-json",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "css-loader": "^2.1.1",
+    "gh-pages": "^2.0.1",
+    "gulp": "^3",
+    "jest": "^22.4.4",
+    "jest-environment-node": "^24.5.0",
+    "near-runtime-ts": "github:nearprotocol/near-runtime-ts",
+    "near-shell": "github:nearprotocol/near-shell",
+    "style-loader": "^0.23.1",
+    "webpack-stream": "^5.2.1"
+  },
+  "wasmStudio": {
+    "name": "Hello World Example",
+    "description": "The contract implements a single function to return \"Hello, World!\" using AssemblyScript",
+    "icon": "typescript-lang-file-icon"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "raw-loader": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "script-loader": "^0.7.2"
+  }
+}
