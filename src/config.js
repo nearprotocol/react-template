@@ -1,5 +1,5 @@
 (function() {
-    const CONTRACT_NAME = 'test.account'; /* TODO: fill this in! */
+    const CONTRACT_NAME = 'peter.tokens'; /* TODO: fill this in! */
     const DEFAULT_ENV = 'development';
 
     function getConfig(env) {
