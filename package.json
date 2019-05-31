@@ -8,7 +8,7 @@
     "deploy:pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run deploy:contract && npm run deploy:pages",
     "prestart": "npm run build && npm run deploy:contract",
-    "start": "python3 -mhttp.server --directory dist",
+    "start": "serve dist",
     "test": "npm run build && jest test --env=near-shell/test_environment"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
     "gulp": "^3",
+    "serve": "^11.0.1",
     "jest": "^22.4.4",
     "jest-environment-node": "^24.5.0",
     "near-runtime-ts": "github:nearprotocol/near-runtime-ts",
@@ -38,6 +39,7 @@
     "raw-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "script-loader": "^0.7.2"
+    "script-loader": "^0.7.2",
+    "serve": "^11.0.1"
   }
 }
