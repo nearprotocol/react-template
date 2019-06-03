@@ -22,12 +22,6 @@ async function initContract() {
 
 // Using initialized contract
 async function doWork() {
-  // Calling method hello on the blockchain for our contract.
-  // .hello() returns a promise which we awaiting.
-  const message = await contract.hello();
-  // Displaying the message once we have it.
-  document.getElementById('contract-message').innerText = message;
-
   ReactDOM.render( 
     <TokensApp contract = {contract}/> ,
     document.getElementById('app')

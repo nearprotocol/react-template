@@ -25,14 +25,17 @@ near deploy --account_id id
 ```
 
 Step 2:
-modify src/settings.js line that sets the contractName. Set it to id from step 1.
+modify src/config.js line that sets the contractName. Set it to id from step 1.
 ```
 const contractName = "contractId"; /* TODO: fill this in! */
 ```
 
 Step 3:
-Open src/index.html in your browser.
-That's it!
+Finally, run the command in your terminal.
+```
+npm start
+```
+The server that starts is for static assets and by default serves them to localhost:5000. Navigate there in your browser to see the app running!
 
 
 ## To Test

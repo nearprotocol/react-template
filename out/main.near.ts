@@ -2,7 +2,7 @@
       import { storage, near, base64 } from "./near";
       import { JSONEncoder } from "./json/encoder";
       import { JSONDecoder, ThrowingJSONHandler, DecoderState } from "./json/decoder";
-      import {hello as wrapped_hello, init as wrapped_init} from "./main";
+      import {hello as wrapped_hello} from "./main";
 
       // Runtime functions
       @external("env", "return_value")
@@ -59,55 +59,4 @@ if (result != null) {
         let val = encoder.serialize();
         return_value(val.byteLength, val.buffer.data);
       
-}
-export class __near_ArgsParser_init extends ThrowingJSONHandler {
-        buffer: Uint8Array;
-        decoder: JSONDecoder<__near_ArgsParser_init>;
-        handledRoot: boolean = false;
-      
-__near_param_initialOwner: String;
-setString(name: string, value: String): void {
-if (name == "initialOwner") {
-            this.__near_param_initialOwner = <String>value;
-            return;
-          }
-
-        super.setString(name, value);
-      }
-setNull(name: string): void {
-if (name == "initialOwner") {
-        this.__near_param_initialOwner = <String>null;
-        return;
-      }
-
-      super.setNull(name);
-    }
-
-      pushObject(name: string): bool {
-if (!this.handledRoot) {
-      assert(name == null);
-      this.handledRoot = true;
-      return true;
-    } else {
-      assert(name != null);
-    }
-
-        return super.pushObject(name);
-      }
-
-      pushArray(name: string): bool {
-
-        return super.pushArray(name);
-      }
-}
-export function init(): void {
-      // Reading input bytes.
-      let json = storage._internalReadBytes(4, 0, 0);
-      let handler = new __near_ArgsParser_init();
-      handler.buffer = json;
-      handler.decoder = new JSONDecoder<__near_ArgsParser_init>(handler);
-      handler.decoder.deserialize(json);
-wrapped_init(
-handler.__near_param_initialOwner
-);
 }
