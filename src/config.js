@@ -1,5 +1,5 @@
 (function() {
-    const CONTRACT_NAME = 'peter.tokens'; /* TODO: fill this in! */
+    const ACCOUNT_ID = 'one.potato'; /* TODO: fill this in! */
     const DEFAULT_ENV = 'development';
 
     function getConfig(env) {
@@ -9,13 +9,13 @@
                 return {
                     nodeUrl: 'https://studio.nearprotocol.com/devnet',
                     helperUrl: 'https://studio.nearprotocol.com/contract-api',
-                    contractName: CONTRACT_NAME,
+                    contractName: ACCOUNT_ID,
                 };
             case 'local':
             case 'test':
                 return {
                     nodeUrl: 'http://localhost:3030',
-                    contractName: CONTRACT_NAME
+                    contractName: ACCOUNT_ID
                 };
             default:
                 throw Error(`Unconfigured environment '${env}'. Can be configured in src/config.js.`);

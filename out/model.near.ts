@@ -3,13 +3,13 @@
       import { JSONEncoder } from "./json/encoder";
       import { JSONDecoder, ThrowingJSONHandler, DecoderState } from "./json/decoder";
       import {Greeter as wrapped_Greeter} from "./model";
-
+      
       // Runtime functions
       @external("env", "return_value")
       declare function return_value(value_len: usize, value_ptr: usize): void;
     
 export function __near_encode_Greeter(
-          value: wrapped_Greeter,
+          value: Greeter,
           encoder: JSONEncoder): void {
 if (value.text != null) {
             encoder.setString("text", value.text);
@@ -21,13 +21,13 @@ export class __near_JSONHandler_Greeter extends ThrowingJSONHandler {
       buffer: Uint8Array;
       decoder: JSONDecoder<__near_JSONHandler_Greeter>;
       handledRoot: boolean = false;
-      value: wrapped_Greeter;
-
-      constructor(value_: wrapped_Greeter) {
+      value: Greeter;
+      
+      constructor(value_: Greeter) {
         super();
         this.value = value_;
       }
-      
+    
 setString(name: string, value: String): void {
 if (name == "text") {
             this.value.text = <String>value;
@@ -64,9 +64,9 @@ if (!this.handledRoot) {
 }
 
 export function __near_decode_Greeter(
-        buffer: Uint8Array, state: DecoderState, value: wrapped_Greeter = null):wrapped_Greeter {
+        buffer: Uint8Array, state: DecoderState, value: Greeter = null):Greeter {
       if (value == null) {
-        value = new wrapped_Greeter();
+        value = new Greeter();
       }
       let handler = new __near_JSONHandler_Greeter(value);
       handler.buffer = buffer;
@@ -75,7 +75,18 @@ export function __near_decode_Greeter(
       return value;
     }
 
-export class Greeter extends wrapped_Greeter {
+export class Greeter {
+  text: string;
+
+  constructor(text: string) {
+    this.text = text;
+  }
+
+  greet(userId: string): string {
+    return "Hello, " + userId;
+  }
+
+
         static decode(json: Uint8Array): Greeter {
           let value = new Greeter();
           value.decode(json);
@@ -83,14 +94,14 @@ export class Greeter extends wrapped_Greeter {
         }
 
         decode(json: Uint8Array): Greeter {
-          <Greeter>__near_decode_Greeter(json, null, this);
+          __near_decode_Greeter(json, null, this);
           return this;
         }
 
         private _encoder(): JSONEncoder {
           let encoder: JSONEncoder = new JSONEncoder();
           encoder.pushObject(null);
-          __near_encode_Greeter(<Greeter>this, encoder);
+          __near_encode_Greeter(this, encoder);
           encoder.popObject();
           return encoder;
         }
@@ -102,4 +113,5 @@ export class Greeter extends wrapped_Greeter {
         toString(): string {
           return this._encoder().toString();
         }
-      }
+      
+}

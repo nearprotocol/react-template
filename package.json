@@ -1,5 +1,5 @@
 {
-  "name": "tokens",
+  "name": "react-template",
   "description": "",
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +8,7 @@
     "deploy:pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run deploy:contract && npm run deploy:pages",
     "prestart": "npm run build && npm run deploy:contract",
-    "start": "npx serve dist",
+    "start": "gulp run",
     "test": "npm run build && jest test --env=near-shell/test_environment"
   },
   "devDependencies": {
@@ -20,13 +20,16 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
-    "gulp": "^3",
-    "serve": "^11.0.1",
-    "jest": "^22.4.4",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "jest": "^24.8.0",
     "jest-environment-node": "^24.5.0",
     "near-runtime-ts": "github:nearprotocol/near-runtime-ts",
     "near-shell": "github:nearprotocol/near-shell",
+    "react-hot-loader": "^4.11.0",
     "style-loader": "^0.23.1",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1",
     "webpack-stream": "^5.2.1"
   },
   "wasmStudio": {
@@ -36,10 +39,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "raw-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "script-loader": "^0.7.2",
-    "serve": "^11.0.1"
+    "script-loader": "^0.7.2"
   }
 }
