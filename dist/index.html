@@ -4,8 +4,36 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- Move this somewhere else when you develop your app! -->
+  <style>
+    body {background: #fff}
+    .image-wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo {
+      width: 33%;
+    }
+  </style>
 </head>
-<body style="background: #fff">
+<body>
+  <div class="image-wrapper">
+    <img class="logo" src="./public/gray_near_logo.svg" alt="NEAR logo"/>
+    <p>🐟 NEAR protocol is a new blockchain focused on developer productivity and useability! 🐟</p>
+    <p>⛓ This little react app is connected to blockchain right now. ⛓</p>
+    <p>🐙 You can learn how to use this template over <a href="https://docs.nearprotocol.com/working-smart-contracts/tour-of-a-near-dapp">here.</a> 🐙</p>
+    <p>
+      📚 <a href="https://docs.nearprotocol.com">Documentation</a> 📚
+    </p>
+    <p>
+      🕸 <a href="https://nearprotocol.com">Website</a> 🕸
+    </p>
+    <p>
+      😸 <a href="https://nearprotocol.com">Repo for this project</a> 😸
+    </p>
+  </div>
   <div class="container">
     <div id="app">
       Loading React...

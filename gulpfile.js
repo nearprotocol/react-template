@@ -34,6 +34,7 @@ gulp.task("serve", (resolve) => {
 });
 
 gulp.task('watch', (resolve) => {
+  gulp.watch(['./dist/*.html'], gulp.series('webpack'));
   gulp.watch(['./src/*'], gulp.series('webpack'));
   gulp.watch(['./src/frontend/*'], gulp.series('webpack'));
   resolve();
