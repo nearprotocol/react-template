@@ -8,12 +8,12 @@
 <br />
 <br />
 
-## Template for NFTs (Non-Fungible Tokens)
+## Template for NEAR dapps
 
-* Template for creating NEAR dapps with a React frontend 🐲
+* Create NEAR dapps with a React frontend 🐲
 * We got Webpack! 💥
 * We got Gulp! 💦
-* We got Corgis? 🐶
+* We got Corgis? [🐶](https://near.ai/corgis) 
 
 
 ## To Run on local node
